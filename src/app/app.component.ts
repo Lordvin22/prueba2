@@ -19,11 +19,12 @@ export class AppComponent {
   constructor(private api: ApiService ){
 
   }
+
   saveProduct(){
     this.product['url'] = "save_product.php";
-    this.api.get(this.product)
-    .then( data =>{
+    this.api.get(this.product).subscribe( data =>{
       console.log(data);
     });
   }
+  
 }
