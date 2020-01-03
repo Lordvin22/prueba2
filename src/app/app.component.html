@@ -1,0 +1,44 @@
+<div clas="container">
+    <nav class="navbar navbar-dark bg-dark ">
+        <div class="container">
+            <a href="" class="navbar-brand">PHP MYSQL CRUD </a>
+        </div>
+
+    </nav>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-body">
+                <form action="save_task.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="name" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="npc" class="form-control" placeholder="NPC" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="stock" class="form-control" placeholder="stock" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="price" class="form-control" placeholder="price" autofocus>
+                    </div>
+                    <input type="submit" class="btn btn-success btn-block" name="save_task" value="Save Task">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name </th>
+                        <th>NPC </th>
+                        <th>Stock </th>
+                        <th>Price </th>
+                        <th>Created At </th>
+                        <th>Actions </th>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
