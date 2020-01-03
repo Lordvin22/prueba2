@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from './service/api.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ApiService } from './service/api.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'prueba';
 
   product: any = {
@@ -16,9 +16,22 @@ export class AppComponent {
     price:'',
   }
 
+   public row = [];
+
   constructor(private api: ApiService ){
 
   }
+
+  ngOnInit(){
+    this.product['url'] = "get_list.php";
+    this.api.get(this.product).subscribe( data =>{
+      if(data.message_type == 'success'){
+        this.row = data.data;
+        console.log(this.row);
+      }
+    });
+  }
+  
 
   saveProduct(){
     this.product['url'] = "save_product.php";
