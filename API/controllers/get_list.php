@@ -1,13 +1,4 @@
 <?php
-header('Content-Type: application/json;charset=UTF-8');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
-header('Allow: GET, POST, OPTIONS, PUT, DELETE');
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-
 include("../config/db.php"); 
 
 
@@ -16,12 +7,16 @@ include("../config/db.php");
     //dar la cadena de conexión y la consulta
     $result= mysqli_query($conn, $query);
     $return_data = array();
+    $return_data['data'] = [];
     if(!$result){
         // die("Query Failed");
         $return_data["query"] = $query;
         $return_data["error"] = "INSERT_ERROR";
+        
     }else{
-        $return_data['data'] = mysqli_fetch_array($result);
+        while ($row = mysqli_fetch_row($result)){ 
+            array_push($return_data['data'], array("id"=>$row[0],"name"=>$row[1],"npc"=>$row[2],"stock"=>$row[3],"price"=>$row[4],"created_at"=>$row[5] ));
+     } 
     }
 
     $return_data["query"] = $query;
