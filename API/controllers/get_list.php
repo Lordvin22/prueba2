@@ -2,7 +2,7 @@
 include("../config/db.php"); 
 
 
-    $query = "SELECT * FROM task";
+    $query = "SELECT * FROM product";
     
     //dar la cadena de conexión y la consulta
     $result= mysqli_query($conn, $query);

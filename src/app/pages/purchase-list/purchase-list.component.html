@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-dark ">
+    <div class="container">
+        <a href="" class="navbar-brand">PHP MYSQL CRUD </a>
+    </div>
+
+</nav>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID </th>
+            <th>Date </th>
+            <th>Price </th>
+            <th>purchased products </th>
+
+        </tr>
+        <tr *ngFor="let data of row; let i of index ">
+            <th>{{data.id}} </th>
+            <th>{{data.date}} </th>
+            <th>{{data.price}} </th>
+            <th>{{data.quantity}} </th>
+
+
+        </tr>
+    </thead>
+
+</table>

@@ -42,8 +42,9 @@ export class PurchaseProductComponent implements OnInit {
   purchaseProduct(){
     this.product['url'] = "purchase_product.php";
     this.api.get(this.product).subscribe( data =>{
+      console.log(data);
       if(data.message_type == 'success'){
-       console.log('se compró')
+      
       }
     });
   }

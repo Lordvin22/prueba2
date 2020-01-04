@@ -6,7 +6,7 @@ include("../config/db.php");
     $stock = $_GET['stock'];
     $price = $_GET['price'];
 
-    $query = "UPDATE task set name = '$name' , description = '$description', stock = '$stock', price = '$price' WHERE id = '$id' ";
+    $query = "UPDATE product set name = '$name' , description = '$description', stock = '$stock', price = '$price' WHERE id = '$id' ";
     
     //dar la cadena de conexión y la consulta
     $result = mysqli_query($conn, $query);

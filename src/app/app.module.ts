@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SaveProductComponent } from './pages/save-product/save-product.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
 import { PurchaseProductComponent } from './pages/purchase-product/purchase-product.component';
+import { PurchaseListComponent } from './pages/purchase-list/purchase-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SaveProductComponent,
     EditProductComponent,
-    PurchaseProductComponent
+    PurchaseProductComponent,
+    PurchaseListComponent
   ],
   imports: [
     BrowserModule,

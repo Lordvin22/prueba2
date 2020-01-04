@@ -1,7 +1,7 @@
 <?php
 include("../config/db.php");
     $id = $_GET['id'];
-    $query = "DELETE FROM task WHERE id = '$id'";
+    $query = "DELETE FROM product WHERE id = '$id'";
     
     //dar la cadena de conexión y la consulta
     $result = mysqli_query($conn, $query);

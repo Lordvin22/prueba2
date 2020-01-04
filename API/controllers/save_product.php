@@ -5,7 +5,7 @@ include("../config/db.php");
     $stock = $_GET['stock'];
     $price = $_GET['price'];
 
-    $query = "INSERT INTO task(name,description,stock,price) VALUES ('$name','$description','$stock','$price')";
+    $query = "INSERT INTO product(name,description,stock,price) VALUES ('$name','$description','$stock','$price')";
     
     //dar la cadena de conexión y la consulta
     $result = mysqli_query($conn, $query);
