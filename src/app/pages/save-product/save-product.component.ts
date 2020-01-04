@@ -8,6 +8,7 @@ import { ApiService } from '../../service/api.service';
 export class SaveProductComponent implements OnInit {
 
   product: any = {
+    id: '',
     name: '',
     description: '',
     stock: '',
@@ -55,17 +56,13 @@ getList(){
     });
   }
 
-    sortBy() {
-      this.product['url'] = "get_list.php";
-    this.api.get(this.product).subscribe( data =>{
-      if(data.message_type == 'success'){
-       this.row.push(data.data);
-       this.row.sort((a,b) => a.product.name.localeCompare(b.product.name));
-       console.log(this.row);
-      }
-    });
-     
+  sortByName() {
+     this.row.sort((a,b) => a.name.localeCompare(b.name));
     }
-  
+
+    sortById() {
+      this.getList();
+      this.row.sort((a,b) => a.id - b.id);
+     }
 
 }

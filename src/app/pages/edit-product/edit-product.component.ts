@@ -15,6 +15,8 @@ export class EditProductComponent implements OnInit {
     stock: '',
     price: ''
   }
+
+  alert: string = '';
   constructor( private api: ApiService ,private router: ActivatedRoute) { }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class EditProductComponent implements OnInit {
     this.product['url'] = "update_product.php";
     this.api.get(this.product).subscribe( data =>{
       if(data.message_type == 'success'){
-       
+       this.alert = this.alert + '<div class="alert alert-success alert-dismissible fade show" role="alert">product edited succesfully <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>';
       }
     });
   }
