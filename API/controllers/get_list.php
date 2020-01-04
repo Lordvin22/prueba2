@@ -15,7 +15,7 @@ include("../config/db.php");
         
     }else{
         while ($row = mysqli_fetch_row($result)){ 
-            array_push($return_data['data'], array("id"=>$row[0],"name"=>$row[1],"npc"=>$row[2],"stock"=>$row[3],"price"=>$row[4],"created_at"=>$row[5] ));
+            array_push($return_data['data'], array("id"=>$row[0],"name"=>$row[1],"description"=>$row[2],"stock"=>$row[3],"price"=>$row[4] ));
      } 
     }
 

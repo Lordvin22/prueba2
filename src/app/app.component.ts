@@ -29,6 +29,8 @@ export class AppComponent implements OnInit {
         this.row = data.data;
         console.log(this.row);
       }
+
+      
     });
   }
   
@@ -36,7 +38,9 @@ export class AppComponent implements OnInit {
   saveProduct(){
     this.product['url'] = "save_product.php";
     this.api.get(this.product).subscribe( data =>{
-      console.log(data);
+      if(data.message_type == 'success'){
+       this.row.push(data.data);
+      }
     });
   }
   
