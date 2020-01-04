@@ -1,35 +1,55 @@
 <div clas="container">
-    <div class="card card-body">
-        <form action="save_task.php" method="POST">
-            <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="name" autofocus>
-            </div>
-            <div class="form-group">
-                <input type="text" name="npc" class="form-control" placeholder="NPC" autofocus>
-            </div>
-            <div class="form-group">
-                <input type="text" name="stock" class="form-control" placeholder="stock" autofocus>
-            </div>
-            <div class="form-group">
-                <input type="text" name="price" class="form-control" placeholder="price" autofocus>
-            </div>
-            <input type="submit" class="btn btn-success btn-block" name="save_task" value="Save Task">
-        </form>
-    </div>
+    <nav class="navbar navbar-dark bg-dark ">
+        <div class="container">
+            <a href="" class="navbar-brand">PHP MYSQL CRUD </a>
+        </div>
 
-    <div class="col-md-8">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Name </th>
-                    <th>NPC </th>
-                    <th>Stock </th>
-                    <th>Price </th>
-                    <th>Created At </th>
-                    <th>Actions </th>
-                </tr>
-            </thead>
+    </nav>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="name" autofocus [(ngModel)]="product.name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="description" class="form-control" placeholder="description" autofocus [(ngModel)]="product.description">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="stock" class="form-control" placeholder="stock" autofocus [(ngModel)]="product.price">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="price" class="form-control" placeholder="price" autofocus [(ngModel)]="product.stock">
+                    </div>
+                    <button class="btn btn-success" (click)="saveProduct()">Guardar </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name </th>
+                        <th>Description </th>
+                        <th>Stock </th>
+                        <th>Price </th>
+                        <th>Actions </th>
+                    </tr>
+                    <tr *ngFor="let data of row; let i of index ">
+                        <th>{{data.name}} </th>
+                        <th>{{data.description}} </th>
+                        <th>{{data.stock}} </th>
+                        <th>{{data.price}} </th>
 
-        </table>
+                        <th>
+                            <button class="btn btn-secondary" [routerLink]="['/edit-product/'+ data.id]"><i class="fas fa-marker"> </i> </button>
+                            <button class="btn btn-danger" (click)="deleteProduct(data.id, i)"><i class="far fa-trash-alt"> </i> </button>
+                            <button class="btn btn-success" [routerLink]="['/purchase-product/'+ data.id]"> <i class="fas fa-dollar-sign"></i>  </button>
+                        </th>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
     </div>
 </div>
