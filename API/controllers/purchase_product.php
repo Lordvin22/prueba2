@@ -3,7 +3,7 @@ include("../config/db.php");
     
     $id = $_GET['id'];
     $quantity = $_GET['quantity'];
-
+    $name = $_GET['name'];
     $query = "SELECT * FROM product WHERE id = '$id'";
 
     //dar la cadena de conexión y la consulta
@@ -33,7 +33,7 @@ include("../config/db.php");
                 $return_data["query"] = $query;
                 $return_data["error"] = "PURCHASE_ERROR";
             }else{
-                $query = "INSERT INTO purchase_log(product_id,price,quantity) VALUES ('$id','$total_pay', '$quantity')  ";
+                $query = "INSERT INTO purchase_log(product_id,name,price,quantity) VALUES ('$id','$name','$total_pay', '$quantity')  ";
                 $result = mysqli_query($conn,$query);
                 if(!$result){
                     $return_data["query"] = $query;

@@ -9,6 +9,7 @@ export class PurchaseListComponent implements OnInit {
   product: any = {
     id: '',
     product_id: '',
+    name: '',
     price: '',
     date: '',
     quantity: ''

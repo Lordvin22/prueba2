@@ -8,6 +8,7 @@
     <thead>
         <tr>
             <th>ID </th>
+            <th>Name</th>
             <th>Date </th>
             <th>Price </th>
             <th>purchased products </th>
@@ -15,9 +16,11 @@
         </tr>
         <tr *ngFor="let data of row; let i of index ">
             <th>{{data.id}} </th>
-            <th>{{data.date}} </th>
             <th>{{data.price}} </th>
+
+            <th>{{data.name}} </th>
             <th>{{data.quantity}} </th>
+            <th>{{data.date}} </th>
 
 
         </tr>
