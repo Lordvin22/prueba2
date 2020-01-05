@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card card-body">
-                <form #f="ngForm" (ngSubmit)="onSubmited(f)">
+                <form #f="ngForm" (ngSubmit)="onSubmited()">
                     <div class="form-group">
                         <span *ngIf="f.submitted && f.controls['name'].errors" class="text-danger">
                                 The name is mandatory.</span>
