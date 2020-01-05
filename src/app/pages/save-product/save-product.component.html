@@ -1,7 +1,7 @@
 <div clas="container">
     <nav class="navbar navbar-dark bg-dark ">
         <div class="container">
-            <a href="" class="navbar-brand">PHP MYSQL CRUD </a>
+            <a href="" class="navbar-brand">E-Commerce </a>
         </div>
 
     </nav>
@@ -34,9 +34,13 @@
             </div>
         </div>
         <div class="col-md-8">
-            <button (click)="sortByName()">Ordenar por Nombre</button>
-            <button (click)="sortById()">Ordenar por ID</button>
-            <button [routerLink]="['/purchase-list']">Ver Compras </button>
+            <div class="row">
+                <div class="col-6">
+                    <button class="btn btn-link" (click)="sortByName()">Get by Name</button>
+                    <button class="btn btn-link" (click)="sortById()">Get by ID</button>
+                    <button class="btn btn-link" [routerLink]="['/purchase-list']">See Purchase </button>
+                </div>
+            </div>
             <table class="table table-bordered">
                 <thead>
                     <tr>

@@ -1,27 +1,32 @@
-<nav class="navbar navbar-dark bg-dark ">
-    <div class="container">
-        <a href="" class="navbar-brand">PHP MYSQL CRUD </a>
-    </div>
+<div>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="" class="navbar-brand">E-commerce</a>
+        </div>
+        <i class="fas fa-arrow-circle-left" style="color: white;" [routerLink]="['/save-product']"></i>
+    </nav>
 
-</nav>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>ID </th>
-            <th>Name</th>
-            <th>Date </th>
-            <th>Price </th>
-            <th>Quantity</th>
+</div>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID </th>
+                <th>Name</th>
+                <th>Date </th>
+                <th>Price </th>
+                <th>Quantity</th>
 
 
-        </tr>
-        <tr *ngFor="let data of row;  ">
-            <th>{{data.id}} </th>
-            <th>{{data.name}} </th>
-            <th>{{data.date}} </th>
-            <th>{{data.price}} </th>
-            <th>{{data.quantity}} </th>
-        </tr>
-    </thead>
+            </tr>
+            <tr *ngFor="let data of row;">
+                <th>{{data.id}} </th>
+                <th>{{data.name}} </th>
+                <th>{{data.date}} </th>
+                <th>{{data.price}} </th>
+                <th>{{data.quantity}} </th>
+            </tr>
+        </thead>
 
-</table>
+    </table>
+</div>
