@@ -7,7 +7,7 @@ import { ApiService } from '../../service/api.service';
 })
 export class PurchaseListComponent implements OnInit {
   product: any = {
-    id: '',
+    // id: '',
     product_id: '',
     name: '',
     price: '',

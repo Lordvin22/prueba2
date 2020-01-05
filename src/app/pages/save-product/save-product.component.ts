@@ -44,6 +44,10 @@ getList(){
     this.api.get(this.product).subscribe( data =>{
       if(data.message_type == 'success'){
        this.row.push(data.data);
+       this.product.name = '';
+       this.product.description = '';
+       this.product.stock = '';
+       this.product.price = '';
       }
     });
   }
@@ -63,6 +67,10 @@ getList(){
     sortById() {
       this.getList();
       this.row.sort((a,b) => a.id - b.id);
+     }
+
+     onSubmited(){
+       this.saveProduct();
      }
 
 }

@@ -8,20 +8,28 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card card-body">
-                <form>
+                <form #f="ngForm" (ngSubmit)="onSubmited(f)">
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="name" autofocus [(ngModel)]="product.name">
+                        <span *ngIf="f.submitted && f.controls['name'].errors" class="text-danger">
+                                The name is mandatory.</span>
+                        <input type="text" name="name" class="form-control" placeholder="name" autofocus [(ngModel)]="product.name" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="description" class="form-control" placeholder="description" autofocus [(ngModel)]="product.description">
+                        <span *ngIf="f.submitted && f.controls['description'].errors" class="text-danger">
+                                    The description is mandatory.</span>
+                        <input type="text" name="description" class="form-control" placeholder="description" autofocus [(ngModel)]="product.description" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="stock" class="form-control" placeholder="stock" autofocus [(ngModel)]="product.price">
+                        <span *ngIf="f.submitted && f.controls['stock'].errors" class="text-danger">
+                                    The  stock is mandatory.</span>
+                        <input type="text" name="stock" class="form-control" placeholder="stock" autofocus [(ngModel)]="product.price" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="price" class="form-control" placeholder="price" autofocus [(ngModel)]="product.stock">
+                        <span *ngIf="f.submitted && f.controls['price'].errors" class="text-danger">
+                                    The price is mandatory.</span>
+                        <input type="text" name="price" class="form-control" placeholder="price" autofocus [(ngModel)]="product.stock" required>
                     </div>
-                    <button class="btn btn-success" (click)="saveProduct()">Guardar </button>
+                    <button class="btn btn-success" type="submit">Guardar </button>
                 </form>
             </div>
         </div>
