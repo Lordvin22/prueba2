@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+// import { FontAwesomeModule } from '@fontawesome/angular-fontawesome';
+
 import { AppComponent } from './app.component';
 import { SaveProductComponent } from './pages/save-product/save-product.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
@@ -21,7 +23,8 @@ import { PurchaseListComponent } from './pages/purchase-list/purchase-list.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

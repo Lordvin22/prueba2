@@ -57,9 +57,9 @@
                         <th>{{data.price}} </th>
 
                         <th>
-                            <button class="btn btn-secondary" [routerLink]="['/edit-product/'+ data.id]"><i class="fas fa-marker"> </i> </button>
-                            <button class="btn btn-danger" (click)="deleteProduct(data.id, i)"><i class="far fa-trash-alt"> </i> </button>
-                            <button class="btn btn-success" [routerLink]="['/purchase-product/'+ data.id]"> <i class="fas fa-dollar-sign"></i>  </button>
+                            <button class="btn btn-secondary" [routerLink]="['/edit-product/'+ data.id]">Edit </button>
+                            <button class="btn btn-danger" (click)="deleteProduct(data.id, i)">Delete </button>
+                            <button class="btn btn-success" [routerLink]="['/purchase-product/'+ data.id]"> Purchase</button>
                         </th>
                     </tr>
                 </thead>

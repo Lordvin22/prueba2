@@ -25,7 +25,9 @@
                         ],
                         "styles": [
                             "src/styles.css",
-                            "src/assets/b4/css/bootstrap.min.css"
+                            "src/assets/b4/css/bootstrap.min.css",
+                            "src/assets/fontawesome/css/fontawesome.min.css"
+
 
                         ],
                         "scripts": [
