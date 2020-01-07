@@ -29,7 +29,7 @@
                                     The price is mandatory.</span>
                         <input type="text" name="price" class="form-control" placeholder="price" autofocus [(ngModel)]="product.stock" required>
                     </div>
-                    <button class="btn btn-success" type="submit">Guardar </button>
+                    <button class="btn btn-success" [disabled]="f.invalid" type="submit">Guardar </button>
                 </form>
             </div>
         </div>
